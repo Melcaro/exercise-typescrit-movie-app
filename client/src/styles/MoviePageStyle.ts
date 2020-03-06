@@ -17,6 +17,7 @@ export const ImgContainer = styled.div`
 
 export const MovieImg = styled.img`
   width: 100%;
+  border-radius: 5%;
 `;
 
 export const MovieInfos = styled.div`
