@@ -11,14 +11,16 @@ export const MoviesContainer = styled.div`
 `;
 
 export const MovieContainer = styled(Link)`
+  flex: 0 0 15%;
   border: 1px solid grey;
-  box-shadow: 
+  box-shadow: 1px 1px grey;
   border-radius: 5%;
-  flex: 0 0 20%;
   margin: 1%;
   height: 30%;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: black;
 `;
 
 export const ImgContainer = styled.div`
@@ -32,6 +34,5 @@ export const MovieImg = styled.img`
 export const MovieTitle = styled.p`
   flex: 0 0 20%;
   text-align: center;
-  text-decoration: none;
   font-size: 1.3em;
 `;
