@@ -4,6 +4,8 @@ import { searchForContent } from '../services/fetchDataServices';
 
 import { SearchResults } from './SearchResults';
 
+import { SearchBarContainer } from '../styles/SearchBarStyle';
+
 export class SearchBar extends Component<
   Types.ISearchBarProps,
   Types.ISearchBarState
@@ -35,7 +37,7 @@ export class SearchBar extends Component<
     const { searchResult } = this.state;
     console.log(searchResult);
     return (
-      <div>
+      <SearchBarContainer>
         <div>
           <input
             onChange={this.onChange}
@@ -49,7 +51,7 @@ export class SearchBar extends Component<
             onClick={this.clearSearchBar}
           />
         )}
-      </div>
+      </SearchBarContainer>
     );
   }
 }

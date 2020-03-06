@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const MovieContainer = styled.div`
+export const ActorPageContainer = styled.div`
   width: 90vw;
   display: flex;
   align-items: flex-start;
@@ -15,11 +15,11 @@ export const ImgContainer = styled.div`
   margin-left: 3%;
 `;
 
-export const MovieImg = styled.img`
+export const ActorImg = styled.img`
   width: 100%;
 `;
 
-export const MovieInfos = styled.div`
+export const ActorInfos = styled.div`
   flex: 0 0 70%;
   display: flex;
   flex-direction: column;
@@ -28,30 +28,26 @@ export const MovieInfos = styled.div`
   margin-left: 3%;
 `;
 
-export const MovieTitle = styled.h1`
+export const ActorName = styled.h1`
   flex: 0 0 10%;
 `;
 
-export const MovieDescription = styled.p`
+export const ActorBiography = styled.p`
   flex: 0 0 30%;
   text-align: left;
   font-size: 1.5em;
 `;
 
-export const MovieRelease = styled.p`
-  flex: 0 0 10%;
-  font-size: 1.3em;
-`;
-
-export const CastInfos = styled.div`
+export const Filmography = styled.div`
   flex: 0 0 100%;
   margin-left: 3%;
 `;
 
-export const CastTitle = styled.h2`
+export const FilmoTitle = styled.h2`
   font-size: 2em;
 `;
-export const CastContainer = styled.div`
+
+export const MoviesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -59,8 +55,8 @@ export const CastContainer = styled.div`
   margin-top: 3%;
 `;
 
-export const ActorContainer = styled(Link)`
-  flex: 0 0 12%;
+export const MovieContainer = styled(Link)`
+  flex: 0 0 20%;
   border: 1px solid grey;
   box-shadow: 1px 1px grey;
   border-radius: 5%;
@@ -71,10 +67,10 @@ export const ActorContainer = styled(Link)`
   color: black;
 `;
 
-export const ActorImgContainer = styled.div`
+export const MovieImgContainer = styled.div`
   flex: 0 0 80%;
 `;
-export const ActorImg = styled.img`
+export const MovieImg = styled.img`
   width: 100%;
   border-radius: 5% 5% 0 0;
 `;
@@ -83,7 +79,7 @@ export const ActorRole = styled.div`
   flex: 0 0 20%;
 `;
 
-export const ActorName = styled.p`
+export const MovieTitle = styled.p`
   text-align: center;
   font-size: 1.3em;
   font-weight: bold;

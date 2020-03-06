@@ -5,7 +5,24 @@ import {
   getActorFilmography,
 } from '../services/fetchDataServices';
 import { isActor, isFilmography } from '../utils/utils';
-import { Link } from 'react-router-dom';
+
+import {
+  ActorPageContainer,
+  ImgContainer,
+  ActorImg,
+  ActorInfos,
+  ActorName,
+  ActorBiography,
+  Filmography,
+  FilmoTitle,
+  MoviesContainer,
+  MovieContainer,
+  MovieImgContainer,
+  MovieImg,
+  ActorRole,
+  MovieTitle,
+  CharacterName,
+} from '../styles/ActorPageStyle';
 
 export class Actor extends Component<Types.IActorProps, Types.IActorState> {
   state: Types.IActorState = {
@@ -32,37 +49,45 @@ export class Actor extends Component<Types.IActorProps, Types.IActorState> {
     }
     const { name, biography, profile_path } = actorInfos;
     return (
-      <div>
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+      <ActorPageContainer>
+        <ImgContainer>
+          <ActorImg
+            src={
+              profile_path
+                ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                : 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+            }
             alt="actor pic"
           />
-        </div>
-        <div>
-          <h1>{name}</h1>
-          <p>{biography}</p>
-        </div>
-        <div>
-          <h2>Filmography:</h2>
-          <div>
+        </ImgContainer>
+        <ActorInfos>
+          <ActorName>{name}</ActorName>
+          <ActorBiography>{biography}</ActorBiography>
+        </ActorInfos>
+        <Filmography>
+          <FilmoTitle>FILMOGRAPHY</FilmoTitle>
+          <MoviesContainer>
             {actorFilmography.map(({ character, title, id, backdrop_path }) => (
-              <Link to={`/movie/${id}`}>
-                <div key={id}>
-                  <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
-                      alt="movie pic"
-                    />
-                  </div>
-                  <div>{title}</div>
-                  <div>{character}</div>
-                </div>
-              </Link>
+              <MovieContainer to={`/movie/${id}`} key={id}>
+                <MovieImgContainer>
+                  <MovieImg
+                    src={
+                      backdrop_path
+                        ? `https://image.tmdb.org/t/p/w500/${backdrop_path}`
+                        : 'https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1340&q=80'
+                    }
+                    alt="movie pic"
+                  />
+                </MovieImgContainer>
+                <ActorRole>
+                  <MovieTitle>{title}</MovieTitle>
+                  <CharacterName>{character}</CharacterName>
+                </ActorRole>
+              </MovieContainer>
             ))}
-          </div>
-        </div>
-      </div>
+          </MoviesContainer>
+        </Filmography>
+      </ActorPageContainer>
     );
   }
 }
