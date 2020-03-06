@@ -4,7 +4,12 @@ import { searchForContent } from '../services/fetchDataServices';
 
 import { SearchResults } from './SearchResults';
 
-import { SearchBarContainer } from '../styles/SearchBarStyle';
+import {
+  SearchBarContainer,
+  InputContainer,
+  InputSearch,
+  ResultsContainer,
+} from '../styles/SearchBarStyle';
 
 export class SearchBar extends Component<
   Types.ISearchBarProps,
@@ -35,22 +40,23 @@ export class SearchBar extends Component<
   };
   render() {
     const { searchResult } = this.state;
-    console.log(searchResult);
     return (
       <SearchBarContainer>
-        <div>
-          <input
+        <InputContainer>
+          <InputSearch
             onChange={this.onChange}
             value={this.state.userQuery}
             placeholder="Search"
-          ></input>
-        </div>
-        {SearchResults && (
-          <SearchResults
-            searchResult={searchResult}
-            onClick={this.clearSearchBar}
           />
-        )}
+        </InputContainer>
+        <ResultsContainer>
+          {SearchResults && (
+            <SearchResults
+              searchResult={searchResult}
+              onClick={this.clearSearchBar}
+            />
+          )}
+        </ResultsContainer>
       </SearchBarContainer>
     );
   }
