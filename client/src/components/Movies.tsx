@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as Types from '../../../commons/Types';
 import { getMoviesList } from '../services/fetchDataServices';
-import { Link } from 'react-router-dom';
 
 import {
   MoviesContainer,

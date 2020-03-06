@@ -4,6 +4,25 @@ import { getMovieByID, getMovieCast } from '../services/fetchDataServices';
 import { isMovie, isCast } from '../utils/utils';
 import { Link } from 'react-router-dom';
 
+import {
+  MovieContainer,
+  ImgContainer,
+  MovieImg,
+  MovieInfos,
+  MovieTitle,
+  MovieDescription,
+  MovieRelease,
+  CastInfos,
+  CastTitle,
+  CastContainer,
+  ActorContainer,
+  ActorImgContainer,
+  ActorImg,
+  ActorRole,
+  ActorName,
+  CharacterName,
+} from '../styles/MoviePageStyle';
+
 export class Movie extends Component<Types.IMovieProps, Types.IMovieState> {
   state: Types.IMovieState = {
     movieInfos: null,
@@ -29,39 +48,46 @@ export class Movie extends Component<Types.IMovieProps, Types.IMovieState> {
     const { poster_path, title, overview, release_date } = movieInfos;
 
     return (
-      <div>
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+      <MovieContainer>
+        <ImgContainer>
+          <MovieImg
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                : 'https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1340&q=80'
+            }
             alt="movie poster"
           />
-        </div>
-        <div>
-          <h1>{title}</h1>
-          <p>{overview}</p>
-          <p>Release: {release_date}</p>
-        </div>
-        <div>
-          <h2>Cast:</h2>
-          <div>
+        </ImgContainer>
+        <MovieInfos>
+          <MovieTitle>{title}</MovieTitle>
+          <MovieDescription>{overview}</MovieDescription>
+          <MovieRelease>Release: {release_date}</MovieRelease>
+        </MovieInfos>
+        <CastInfos>
+          <CastTitle>CAST</CastTitle>
+          <CastContainer>
             {movieCast.map(({ id: actorID, character, name, profile_path }) => (
-              <Link to={`/actor/${actorID}`}>
-                <div key={actorID}>
-                  <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
-                      alt="actor pic"
-                    />
-                  </div>
-                  <span>
-                    {character} / {name}
-                  </span>
-                </div>
-              </Link>
+              <ActorContainer to={`/actor/${actorID}`} key={actorID}>
+                <ActorImgContainer>
+                  <ActorImg
+                    src={
+                      profile_path
+                        ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                        : 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+                    }
+                    alt="actor pic"
+                  />
+                </ActorImgContainer>
+                <ActorRole>
+                  <ActorName>{name}</ActorName>
+                  <CharacterName>{character}</CharacterName>
+                </ActorRole>
+              </ActorContainer>
             ))}
-          </div>
-        </div>
-      </div>
+          </CastContainer>
+        </CastInfos>
+      </MovieContainer>
     );
   }
 }
