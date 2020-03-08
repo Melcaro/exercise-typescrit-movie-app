@@ -21,6 +21,7 @@ export const Result = styled(Link)`
   justify-content: center;
   margin: 2%;
   text-decoration: none;
+  border: 1px solid brown;
 `;
 
 export const ResultImgContainer = styled.div`

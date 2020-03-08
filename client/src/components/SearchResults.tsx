@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Types from '../../../commons/Types';
-import { Link } from 'react-router-dom';
 
 import {
   ResultsContainer,
