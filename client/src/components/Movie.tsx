@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import * as Types from '../../../commons/Types';
 import { getMovieByID, getMovieCast } from '../services/fetchDataServices';
 import { isMovie, isCast } from '../utils/utils';
@@ -22,7 +23,12 @@ import {
   CharacterName,
 } from '../styles/MoviePageStyle';
 
-export class Movie extends Component<Types.IMovieProps, Types.IMovieState> {
+interface IMovieProps
+  extends RouteComponentProps<{
+    movieID: string;
+  }> {}
+
+export class Movie extends Component<IMovieProps, Types.IMovieState> {
   state: Types.IMovieState = {
     movieInfos: null,
     movieCast: [],
@@ -32,7 +38,7 @@ export class Movie extends Component<Types.IMovieProps, Types.IMovieState> {
     this.getMovieInfos();
   }
 
-  componentDidUpdate(prevProps: Types.IMovieProps) {
+  componentDidUpdate(prevProps: IMovieProps) {
     if (this.props.match.params.movieID !== prevProps.match.params.movieID) {
       this.getMovieInfos();
     }

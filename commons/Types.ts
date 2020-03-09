@@ -1,5 +1,3 @@
-import { RouteComponentProps } from 'react-router-dom';
-
 export interface IResult {
   popularity: number;
   vote_count: number;
@@ -95,11 +93,6 @@ export interface IMovieState {
   movieCast: IActor[] | null;
 }
 
-export interface IMovieProps
-  extends RouteComponentProps<{
-    movieID: string;
-  }> {}
-
 export interface IActor {
   cast_id: string;
   character: string;
@@ -136,11 +129,6 @@ export interface IActorState {
   actorInfos: IActorInfos | null;
   actorFilmography: IActorFilmography[] | null;
 }
-
-export interface IActorProps
-  extends RouteComponentProps<{
-    actorID: string;
-  }> {}
 
 export interface IActorFilmography {
   character: string;

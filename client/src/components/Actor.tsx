@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import * as Types from '../../../commons/Types';
 import {
   getActorInfos,
@@ -23,8 +24,12 @@ import {
   MovieTitle,
   CharacterName,
 } from '../styles/ActorPageStyle';
+interface IActorProps
+  extends RouteComponentProps<{
+    actorID: string;
+  }> {}
 
-export class Actor extends Component<Types.IActorProps, Types.IActorState> {
+export class Actor extends Component<IActorProps, Types.IActorState> {
   state: Types.IActorState = {
     actorInfos: null,
     actorFilmography: null,
@@ -34,7 +39,7 @@ export class Actor extends Component<Types.IActorProps, Types.IActorState> {
     this.getActorData();
   }
 
-  componentDidUpdate(prevProps: Types.IActorProps) {
+  componentDidUpdate(prevProps: IActorProps) {
     if (this.props.match.params.actorID !== prevProps.match.params.actorID) {
       this.getActorData();
     }
