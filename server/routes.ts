@@ -1,7 +1,7 @@
 import express from 'express';
-const MoviesRouter = require('./routes/MoviesRouter');
-const ActorRouter = require('./routes/ActorRouter');
-const SearchRouter = require('./routes/SearchRouter');
+import MoviesRouter from './routes/MoviesRouter';
+import ActorRouter from './routes/ActorRouter';
+import SearchRouter from './routes/SearchRouter';
 
 export function routes(app: express.Application) {
   app.use('/api/v1/movies', MoviesRouter);

@@ -20,6 +20,7 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
+    "build": "tsc -p ./",
     "start:dev": "ts-node-dev --respawn --no-notify index.ts"
   }
 }

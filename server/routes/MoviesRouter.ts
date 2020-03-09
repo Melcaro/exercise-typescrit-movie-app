@@ -8,4 +8,4 @@ router.get('/', MoviesCtrl.getMovies);
 router.get('/:movieID/credits', MoviesCtrl.getMovieCast);
 router.get('/:movieID', MoviesCtrl.getMovieByID);
 
-module.exports = router;
+export default router;

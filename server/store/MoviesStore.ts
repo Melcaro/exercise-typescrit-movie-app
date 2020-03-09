@@ -12,7 +12,7 @@ export async function fetchMovies() {
   return results;
 }
 
-export async function fetchMovieByID(movieID) {
+export async function fetchMovieByID(movieID: string) {
   const { data: movie } = await axios.get<Types.IMovieResult>(
     `https://api.themoviedb.org/3/movie/${movieID}`,
     { params: auth }
@@ -20,7 +20,7 @@ export async function fetchMovieByID(movieID) {
   return movie;
 }
 
-export async function fetchMovieCast(movieID) {
+export async function fetchMovieCast(movieID: string) {
   const {
     data: { cast },
   } = await axios.get<Types.ICast>(
@@ -32,7 +32,7 @@ export async function fetchMovieCast(movieID) {
   return cast;
 }
 
-export async function fetchActorInfos(actorID) {
+export async function fetchActorInfos(actorID: string) {
   const { data } = await axios.get<Types.IActorInfos>(
     `https://api.themoviedb.org/3/person/${actorID}`,
     {
@@ -42,7 +42,7 @@ export async function fetchActorInfos(actorID) {
   return data;
 }
 
-export async function fetchActorFilmography(actorID) {
+export async function fetchActorFilmography(actorID: string) {
   const {
     data: { cast },
   } = await axios.get<Types.IFilmographyResult>(

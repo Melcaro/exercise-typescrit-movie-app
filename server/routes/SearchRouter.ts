@@ -1,8 +1,8 @@
 import { Router } from 'express';
-const SearchCtrl = require('../controllers/SearchController');
+import * as SearchCtrl from '../controllers/SearchController';
 
 const router = Router();
 
 router.get('/:query', SearchCtrl.searchContent);
 
-module.exports = router;
+export default router;

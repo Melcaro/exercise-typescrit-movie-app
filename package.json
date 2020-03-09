@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "heroku-prebuild": "cd server && yarn build",
+    "start": "node server/build/server/index.js"
+  }
+}
