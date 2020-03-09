@@ -41,7 +41,6 @@ export class Movie extends Component<Types.IMovieProps, Types.IMovieState> {
   getMovieInfos = async () => {
     const movieInfos = await getMovieByID(this.props.match.params.movieID);
     const movieCast = await getMovieCast(this.props.match.params.movieID);
-    console.log(movieInfos);
     this.setState({ movieInfos, movieCast });
   };
 
