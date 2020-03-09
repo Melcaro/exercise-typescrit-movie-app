@@ -34,6 +34,12 @@ export class Actor extends Component<Types.IActorProps, Types.IActorState> {
     this.getActorData();
   }
 
+  componentDidUpdate(prevProps: Types.IActorProps) {
+    if (this.props.match.params.actorID !== prevProps.match.params.actorID) {
+      this.getActorData();
+    }
+  }
+
   getActorData = async () => {
     const actorInfos = await getActorInfos(this.props.match.params.actorID);
     const actorFilmography = await getActorFilmography(

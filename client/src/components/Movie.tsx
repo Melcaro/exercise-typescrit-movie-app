@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as Types from '../../../commons/Types';
 import { getMovieByID, getMovieCast } from '../services/fetchDataServices';
 import { isMovie, isCast } from '../utils/utils';
-import { Link } from 'react-router-dom';
 
 import {
   MovieContainer,
@@ -33,9 +32,16 @@ export class Movie extends Component<Types.IMovieProps, Types.IMovieState> {
     this.getMovieInfos();
   }
 
+  componentDidUpdate(prevProps: Types.IMovieProps) {
+    if (this.props.match.params.movieID !== prevProps.match.params.movieID) {
+      this.getMovieInfos();
+    }
+  }
+
   getMovieInfos = async () => {
     const movieInfos = await getMovieByID(this.props.match.params.movieID);
     const movieCast = await getMovieCast(this.props.match.params.movieID);
+    console.log(movieInfos);
     this.setState({ movieInfos, movieCast });
   };
 
