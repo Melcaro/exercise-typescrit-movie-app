@@ -3,8 +3,5 @@
     "heroku-prebuild": "cd server && yarn",
     "postinstall": "cd server && yarn build",
     "start": "node server/build/server/index.js"
-  },
-  "dependencies": {
-    "node": "^13.10.1"
   }
 }
