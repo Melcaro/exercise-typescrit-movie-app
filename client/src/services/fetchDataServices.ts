@@ -1,14 +1,16 @@
 import axios from 'axios';
 import * as Types from '../../../commons/Types';
 
-const URL = "/api/v1"
+const URL = '/api/v1';
 export async function getMoviesList() {
   const { data: results } = await axios.get<Types.IResult[]>(`${URL}/movies`);
   return results;
 }
 
 export async function getMovieByID(movieID: string) {
-  const { data } = await axios.get<Types.IMovieResult>(`${URL}/movies/${movieID}`);
+  const { data } = await axios.get<Types.IMovieResult>(
+    `${URL}/movies/${movieID}`
+  );
   return data;
 }
 
@@ -20,7 +22,9 @@ export async function getMovieCast(movieID: string) {
 }
 
 export async function getActorInfos(actorID: string) {
-  const { data } = await axios.get<Types.IActorInfos>(`${URL}/actor/${actorID}`);
+  const { data } = await axios.get<Types.IActorInfos>(
+    `${URL}/actor/${actorID}`
+  );
   return data;
 }
 
