@@ -1,4 +1,5 @@
 import express from 'express';
+require('dotenv').config();
 import { middlewares } from './middlewares';
 import { routes } from './routes';
 
