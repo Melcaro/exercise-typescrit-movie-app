@@ -4,9 +4,11 @@ import { getMoviesList } from '../services/fetchDataServices';
 
 import {
   MoviesContainer,
+  MoviesContainerTitle,
   MovieContainer,
   ImgContainer,
   MovieImg,
+  MovieTitleContainer,
   MovieTitle,
 } from '../styles/MoviesStyle';
 
@@ -27,6 +29,7 @@ export class Movies extends Component<Types.IMoviesProps, Types.IMoviesState> {
     const { moviesList } = this.state;
     return (
       <MoviesContainer>
+        <MoviesContainerTitle>Latest Movies</MoviesContainerTitle>
         {moviesList.map(({ id, poster_path, title }: Types.IResult) => (
           <MovieContainer to={`/movie/${id}`} key={id}>
             <ImgContainer>
@@ -35,7 +38,9 @@ export class Movies extends Component<Types.IMoviesProps, Types.IMoviesState> {
                 alt="movie poster"
               />
             </ImgContainer>
-            <MovieTitle>{title}</MovieTitle>
+            <MovieTitleContainer>
+              <MovieTitle title={title}>{title}</MovieTitle>
+            </MovieTitleContainer>
           </MovieContainer>
         ))}
       </MoviesContainer>

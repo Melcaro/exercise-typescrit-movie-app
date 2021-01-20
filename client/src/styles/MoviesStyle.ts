@@ -2,37 +2,42 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const MoviesContainer = styled.div`
-  flex: 0 0 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3%;
+`;
+
+export const MoviesContainerTitle = styled.h2`
+  width: 100%;
+  font-size: 2em;
 `;
 
 export const MovieContainer = styled(Link)`
-  flex: 0 0 15%;
+  flex: 0 0 12%;
   border: 1px solid grey;
   box-shadow: 1px 1px grey;
   border-radius: 5%;
   margin: 1%;
-  height: 30%;
-  display: flex;
-  flex-direction: column;
   text-decoration: none;
   color: black;
 `;
 
 export const ImgContainer = styled.div`
-  flex: 0 0 80%;
+  width: 100%;
+  overflow: hidden;
 `;
 export const MovieImg = styled.img`
   width: 100%;
   border-radius: 5% 5% 0 0;
 `;
 
-export const MovieTitle = styled.p`
+export const MovieTitleContainer = styled.div`
   flex: 0 0 20%;
   text-align: center;
+  padding: 5% 1%;
   font-size: 1.3em;
+`;
+
+export const MovieTitle = styled.p<{ title: string }>`
+  margin: 0;
 `;

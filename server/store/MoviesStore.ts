@@ -2,8 +2,6 @@ import axios from 'axios';
 import { auth } from '../services/auth';
 import * as Types from '../../commons/Types';
 
-
-
 export async function fetchMovies() {
   const {
     data: { results },
