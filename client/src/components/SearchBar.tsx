@@ -4,10 +4,7 @@ import { searchForContent } from '../services/fetchDataServices';
 
 import { SearchResults } from './SearchResults';
 
-import {
-  SearchBarContainer,
-  InputSearch,
-} from '../styles/SearchBarStyle';
+import { SearchBarContainer, InputSearch } from '../styles/SearchBarStyle';
 
 export class SearchBar extends Component<
   Types.ISearchBarProps,
@@ -21,10 +18,14 @@ export class SearchBar extends Component<
   onChange = ({
     currentTarget: { value },
   }: React.FormEvent<HTMLInputElement>) => {
-    this.setState({
-      userQuery: value,
-    });
-    this.startSearch();
+    if (value) {
+      this.setState({
+        userQuery: value,
+      });
+      this.startSearch();
+    } else if (value === '') {
+      this.clearSearchBar();
+    }
   };
 
   startSearch = async () => {

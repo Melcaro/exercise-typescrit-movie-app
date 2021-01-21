@@ -6,7 +6,6 @@ export const SearchBarContainer = styled.div`
   margin: 2% auto;
   position: relative;
   z-index: 1;
-  border:1px solid green;
 `;
 
 export const InputSearch = styled.input`

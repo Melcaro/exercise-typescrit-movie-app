@@ -44,7 +44,8 @@ export const SearchResults: React.FC<Types.ISearchResultsProps> = ({
                       : `https://image.tmdb.org/t/p/w500/${profile_path}`
                     : 'https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1340&q=80'
                 }
-                alt="pic"
+                alt="result picture"
+                
               />
             </ResultImgContainer>
             <ResultTitle>{name ? name : title}</ResultTitle>
