@@ -58,6 +58,7 @@ export const MoviesContainer = styled.div`
 
 export const MovieContainer = styled(Link)`
   flex: 1 0 20%;
+  max-width:20%;
   border: 1px solid grey;
   box-shadow: 1px 1px grey;
   border-radius: 5%;

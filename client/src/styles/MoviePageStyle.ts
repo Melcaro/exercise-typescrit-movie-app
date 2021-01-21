@@ -56,26 +56,28 @@ export const CastContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
   margin-top: 3%;
+  width:100%;
 `;
 
 export const ActorContainer = styled(Link)`
-  flex: 0 0 12%;
+  flex: 0 0 13%;
   border: 1px solid grey;
   box-shadow: 1px 1px grey;
   border-radius: 5%;
   margin: 1%;
-  display: flex;
-  flex-direction: column;
   text-decoration: none;
   color: black;
 `;
 
 export const ActorImgContainer = styled.div`
-  flex: 0 0 80%;
+  height: 35vh;
+  width: 100%;
+  overflow: hidden;
 `;
 export const ActorImg = styled.img`
+  height: 100%;
+  object-fit: cover;
   width: 100%;
   border-radius: 5% 5% 0 0;
 `;
