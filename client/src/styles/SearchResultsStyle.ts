@@ -2,15 +2,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const ResultsContainer = styled.div`
-  width: 60vw;
+  width: 60%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   flex-wrap: wrap;
   position: absolute;
-  top: 55px;
-  right: -185px;
-  padding-top: 5%;
+  margin: 2% auto;
+  right: 20%;
+  border: 1px solid red;
 `;
 
 export const Result = styled(Link)`

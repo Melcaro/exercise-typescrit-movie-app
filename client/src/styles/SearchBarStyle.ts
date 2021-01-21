@@ -1,23 +1,18 @@
 import styled from 'styled-components';
 
 export const SearchBarContainer = styled.div`
-  width: 30vw;
-  height: 5vh;
-  margin: 2% 0;
+  width:90vw;
+  height: 4vh;
+  margin: 2% auto;
   position: relative;
   z-index: 1;
-`;
-
-export const InputContainer = styled.div`
-  height: 100%;
-  width: 100%;
+  border:1px solid green;
 `;
 
 export const InputSearch = styled.input`
   height: 100%;
-  width: 100%;
+  width: 30%;
+  margin: 0 auto;
   border-radius: 5px;
   font-size: 1.9 em;
 `;
-
-export const ResultsContainer = styled.div``;

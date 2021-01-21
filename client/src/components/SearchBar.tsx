@@ -6,9 +6,7 @@ import { SearchResults } from './SearchResults';
 
 import {
   SearchBarContainer,
-  InputContainer,
   InputSearch,
-  ResultsContainer,
 } from '../styles/SearchBarStyle';
 
 export class SearchBar extends Component<
@@ -42,21 +40,17 @@ export class SearchBar extends Component<
     const { searchResult } = this.state;
     return (
       <SearchBarContainer>
-        <InputContainer>
-          <InputSearch
-            onChange={this.onChange}
-            value={this.state.userQuery}
-            placeholder="Search"
+        <InputSearch
+          onChange={this.onChange}
+          value={this.state.userQuery}
+          placeholder="Search"
+        />
+        {SearchResults && (
+          <SearchResults
+            searchResult={searchResult}
+            onClick={this.clearSearchBar}
           />
-        </InputContainer>
-        <ResultsContainer>
-          {SearchResults && (
-            <SearchResults
-              searchResult={searchResult}
-              onClick={this.clearSearchBar}
-            />
-          )}
-        </ResultsContainer>
+        )}
       </SearchBarContainer>
     );
   }
